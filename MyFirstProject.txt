@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+
+    double merchandiseCost, employeeSalary, yearlyRent, electricityCost, desiredProfit, saleDiscount;
+    const double markupPercentage = 0.10;
+    const double salePercentage = 0.15;
+
+
+    cout << "Enter the total cost of merchandise:";
+    cin >> merchandiseCost;
+    cout << "Enter the yearly salary of employees:";
+    cin >> employeeSalary;
+    cout << "Enter the yearly rent:";
+    cin >> yearlyRent;
+    cout << "Enter the estimated yearly electricity cost:";
+    cin >> electricityCost;
+    cout << "Enter the desired net profit percentage:";
+    cin >> desiredProfit;
+
+    double totalExpenses = merchandiseCost + employeeSalary + yearlyRent + electricityCost;
+
+    double totalRevenue = (totalExpenses)/(1 - desiredProfit)*(1 + markupPercentage)*(1 -salePercentage);
+
+    double requiredMarkup = (totalRevenue - totalExpenses)/(merchandiseCost);
+
+    cout << "The merchandise should be marked as approximatley "<< requiredMarkup*100 << "%" << endl;
+    
+    return 0;
+
+}
